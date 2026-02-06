@@ -6,8 +6,7 @@
     <title>Krish Jaiswal | Elite 3D Portfolio</title>
 	
 <meta name="description" content="Krish Jaiswal ki official website. Yahan mere projects aur professional details dekhiye.">
-<meta name="description" content="Krish Jaiswal ki official website. Yahan mere projects, skills aur professional details dekhiye.">
-	<meta name="google-site-verification" content="kSkjr5neF_a69-1BWtqq02wW62mFhKXWMnlg1vD55IY" />
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,11 +27,9 @@
     <meta name="keywords" content="Krish Jaiswal,Krish,Jaiswal,KRISH JAISWAL,KRISH,JAISWAL,Badgohna kala ,Gauhniya, Web Developer, 3D Portfolio, Three.js, Designer">
     <meta name="author" content="Krish Jaiswal">
 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Poppins:wght@300;400;600&family=Electrolize&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -45,128 +42,70 @@
         * { cursor: none !important; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            margin: 0;
-            background: var(--bg-dark);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
+            margin: 0; background: var(--bg-dark); color: white;
+            font-family: 'Poppins', sans-serif; overflow-x: hidden;
+            -webkit-user-select: none; user-select: none;
         }
 
         canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
 
-        /* Custom Cursor */
+        /* Cursor */
         #cursor { position: fixed; width: 8px; height: 8px; background: var(--tomato); border-radius: 50%; pointer-events: none; z-index: 9999; box-shadow: 0 0 15px var(--tomato); transform: translate(-50%, -50%); transition: transform 0.1s; }
         #cursor-blur { position: fixed; width: 35px; height: 35px; border: 1.5px solid var(--tomato); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.15s ease-out; transform: translate(-50%, -50%); }
 
-        /* Navigation */
-       nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px; /* Nav bar ki height fix aur kam kar di */
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%; /* Nav ki height ke barabar */
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.logo-orb {
-    width: 60px; /* Logo ka size bada rakha hai */
-    height: 60px;
-    margin-top: 5px; /* Alignment fix karne ke liye */
-    animation: colorShift 8s infinite alternate linear;
-    filter: drop-shadow(0 0 10px var(--tomato-glow));
-}
-
-.orb-ring {
-    fill: rgba(0, 0, 0, 0.4);
-    stroke: url(#cyberGradient);
-    stroke-width: 6;
-    stroke-dasharray: 200;
-    animation: rotateOrb 3s linear infinite;
-}
-
-.logo-kj {
-    fill: #ffffff;
-    font-size: 32px;
-    font-weight: 900;
-    font-family: 'Space Grotesk', sans-serif;
-}
-
-.logo-text {
-    font-size: 1.5rem; /* Text size ko balance kiya taaki nav bar na badhe */
-    font-family: 'Electrolize', sans-serif;
-    color: #ffffff;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-/* Animations (Same as before) */
-@keyframes rotateOrb {
-    0% { stroke-dashoffset: 400; transform: rotate(0deg); }
-    100% { stroke-dashoffset: 0; transform: rotate(360deg); }
-}
-
-@keyframes colorShift {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-}   .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; opacity: 0.7; }
-        .nav-links a:hover { opacity: 1; color: var(--tomato); }
-
-
-        /* Hero Card */
-        section { padding: 100px 8%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-
-        .hero-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 99, 71, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-            transition: transform 0.1s ease-out;
-            max-width: 1100px;
-            width: 100%;
+        /* Navigation Responsive */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 70px; padding: 0 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .profile-container {
-            flex: 0 0 280px;
-            height: 280px;
-            border-radius: 50%;
-            border: 4px solid var(--tomato);
-            padding: 5px;
-            box-shadow: 0 0 40px var(--tomato-glow);
-            overflow: hidden;
-            background: linear-gradient(45deg, var(--tomato), #ff4500);
-        }
+        .logo-wrapper { display: flex; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-orb { width: 60px; height: 60px; animation: colorShift 8s infinite alternate linear; }
+        .orb-ring { fill: rgba(0, 0, 0, 0.4); stroke: url(#cyberGradient); stroke-width: 6; stroke-dasharray: 200; animation: rotateOrb 3s linear infinite; }
+        .logo-kj { fill: #ffffff; font-size: 32px; font-weight: 900; font-family: 'Space Grotesk'; }
+        .logo-text { font-size: 1.5rem; font-family: 'Electrolize'; color: #ffffff; letter-spacing: 2px; font-weight: bold; }
+
+        .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.85rem; opacity: 0.7; transition: 0.3s; }
         
-        .profile-image {
-            width: 100%; height: 100%; border-radius: 50%;
-            background-image: url('m.jpg'); 
-            background-size: cover; background-position: top center;
-            filter: contrast(1.1) brightness(1.1);
+        @media (max-width: 950px) {
+            nav { padding: 0 3%; }
+            .logo-orb { width: 45px; height: 45px; }
+            .logo-text { font-size: 1rem; }
+            .nav-links a { margin-left: 10px; font-size: 0.7rem; }
+            
+            .hero-card { flex-direction: column-reverse; text-align: center; padding: 30px; margin-top: 60px; gap: 30px; }
+            .profile-container { 
+                flex: 0 0 220px !important; 
+                height: 220px !important; 
+                width: 220px !important; 
+                margin: 0 auto; 
+                display: block !important; 
+            }
+            #cursor, #cursor-blur { display: none; }
+            * { cursor: auto !important; }
         }
 
-        .highlight { color: var(--tomato); text-shadow: 0 0 20px var(--tomato-glow); }
+        /* Sections */
+        section { padding: 100px 8%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .hero-card { background: var(--glass); backdrop-filter: blur(20px); padding: 50px; border-radius: 40px; border: 1px solid rgba(255, 99, 71, 0.2); display: flex; align-items: center; gap: 50px; width: 100%; max-width: 1100px; }
+        
+        /* Responsive Profile Container */
+        .profile-container { 
+            flex: 0 0 280px; 
+            height: 280px; 
+            border-radius: 50%; 
+            border: 4px solid var(--tomato); 
+            padding: 5px; 
+            box-shadow: 0 0 40px var(--tomato-glow); 
+            overflow: hidden; 
+            background: linear-gradient(45deg, var(--tomato), #ff4500); 
+        }
+        .profile-image { width: 100%; height: 100%; border-radius: 50%; background-image: url('m.jpg'); background-size: cover; background-position: top center; }
+
+         .highlight { color: var(--tomato); text-shadow: 0 0 20px var(--tomato-glow); }
         .tag { display: inline-block; padding: 5px 15px; border: 1px solid var(--tomato); border-radius: 50px; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 15px; background: rgba(255, 99, 71, 0.1); }
 
         /* Skills & Info Cards */
@@ -193,22 +132,15 @@
             width: 12px; height: 12px; background: var(--tomato); border-radius: 50%;
             box-shadow: 0 0 10px var(--tomato);
         }
+        .social-bar { position: fixed; bottom: 30px; left: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 100; }
+        .social-icon { width: 45px; height: 45px; background: rgba(10, 10, 10, 0.8); border: 1px solid var(--tomato); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.4s; }
+        
+        .footer-kj-logo { font-size: 3rem; font-weight: 900; font-family: 'Space Grotesk'; background: linear-gradient(45deg, #FF6347, #00f2ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: colorShift 8s infinite alternate linear; }
 
-/* Footer KJ Watermark Styling */
-.footer-kj-logo {
-    font-size: 3rem;
-    font-weight: 900;
-    font-family: 'Space Grotesk';
-    display: inline-block;
-    background: linear-gradient(45deg, #FF6347, #00f2ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(255, 99, 71, 0.5));
-    animation: colorShift 8s infinite alternate linear; /* Wahi animation jo main logo mein hai */
-    opacity: 0.8;
-    cursor: default;
-}
-
+        @keyframes rotateOrb { 0% { stroke-dashoffset: 400; transform: rotate(0deg); } 100% { stroke-dashoffset: 0; transform: rotate(360deg); } }
+        @keyframes colorShift { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
+        @keyframes textColorShift { 0% { color: #ffffff; } 50% { color: #00f2ff; } 100% { color: #FF6347; } }
+    
 /* Reusing the animations from the logo */
 @keyframes textColorShift {
     0% { color: #ffffff; }
@@ -240,38 +172,29 @@ body {
 canvas {
     pointer-events: none; 
 }
-    </style>
+	
+	</style>
 </head>
 <body>
 
-<header>
-    <h1 style="text-align: center; font-size: 36px; color: #333;">Krish Jaiswal</h1>
-</header>
-
+    <canvas id="canvas"></canvas>
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
-    <canvas id="canvas"></canvas>
 
     <nav>
-
-    <div class="logo-wrapper">
-        <div class="logo">
-            <div class="logo-orb">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FF6347; stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00f2ff; stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <circle cx="50" cy="50" r="44" class="orb-ring" />
-                    <text x="50%" y="56%" class="logo-kj" dominant-baseline="middle" text-anchor="middle">KJ</text>
-                </svg>
+        <div class="logo-wrapper">
+            <div class="logo">
+                <div class="logo-orb">
+                    <svg viewBox="0 0 100 100">
+                        <defs><linearGradient id="cyberGradient"><stop offset="0%" style="stop-color:#FF6347"/><stop offset="100%" style="stop-color:#00f2ff"/></linearGradient></defs>
+                        <circle cx="50" cy="50" r="44" class="orb-ring" />
+                        <text x="50%" y="56%" class="logo-kj" dominant-baseline="middle" text-anchor="middle">KJ</text>
+                    </svg>
+                </div>
+                <span class="logo-text" style="animation: textColorShift 8s infinite alternate;">CYBER<span class="highlight">JAI</span></span>
             </div>
-            <span class="logo-text" style="animation: textColorShift 8s infinite alternate;">CYBER<span class="highlight">JAI</span></span>
         </div>
-    </div>
-    <div class="nav-links">
+        <div class="nav-links">
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -286,14 +209,12 @@ canvas {
                 <h1>Hi, I'm <span class="highlight">Krish Jaiswal</span></h1>
                 <p style="font-size: 1.4rem; margin: 10px 0;">I build <span id="typewriter" class="highlight"></span></p>
                 <p style="color: #bbb; max-width: 500px; line-height: 1.6;">Full-stack developer specializing in high-end 3D interfaces and interactive digital storytelling.</p>
-                <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: inherit;">
+                <div style="margin-top: 25px; display: flex; gap: 15px;">
                     <a href="#projects" style="padding: 12px 25px; background: var(--tomato); color: white; text-decoration: none; border-radius: 10px; font-weight: 600;">View Projects</a>
                     <a href="#contact" style="padding: 12px 25px; border: 1px solid var(--tomato); color: white; text-decoration: none; border-radius: 10px;">Get in Touch</a>
                 </div>
             </div>
-            <div class="profile-container">
-                <div class="profile-image" alt="Krish Jaiswal Photo"></div>
-            </div>
+            <div class="profile-container"><div class="profile-image"></div></div>
         </div>
     </section>
 
@@ -301,59 +222,39 @@ canvas {
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%;">
             <div class="info-card" data-aos="fade-up">
                 <h2 class="highlight"><i class="fas fa-code-branch"></i> Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-badge">HTML5</div>
-                    <div class="skill-badge">CSS3</div>
-                    
-                </div>
-				<div class="skills-grid">
-                    <div class="skill-badge">JavaScript (ES6+)</div>
-                    <div class="skill-badge">W3.CSS)</div>
-                </div>
-				<div class="skills-grid">
-                     <div class="skill-badge">Three.js</div>
-                     <div class="skill-badge">WebGL</div>
-                </div>
-				<div class="skills-grid">
-                       <div class="skill-badge">React</div>
-                       <div class="skill-badge">Next.js</div>
-                </div>
-				<div class="skills-grid">
-                     <div class="skill-badge">Node.js</div>
-                     <div class="skill-badge">Express</div>
-
-                </div>
-				<div class="skills-grid">
-                    <div class="skill-badge">Python</div>
-					<div class="skill-badge">C++</div>
-                   
-                </div>
+                <div class="skills-grid"><div class="skill-badge">HTML5</div><div class="skill-badge">CSS3</div></div>
+                <div class="skills-grid"><div class="skill-badge">JavaScript (ES6+)</div><div class="skill-badge">W3.CSS</div></div>
+                <div class="skills-grid"><div class="skill-badge">Three.js</div><div class="skill-badge">WebGL</div></div>
+                <div class="skills-grid"><div class="skill-badge">React</div><div class="skill-badge">Next.js</div></div>
+                <div class="skills-grid"><div class="skill-badge">Node.js</div><div class="skill-badge">Express</div></div>
+                <div class="skills-grid"><div class="skill-badge">Python</div><div class="skill-badge">C++</div></div>
             </div>
+            
             <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="highlight"><i class="fas fa-graduation-cap"></i> Education</h2>
                 <div class="timeline">
-						 <div class="timeline-item">
-							<h4 style="margin:0;">NIELIT 'O' Level</h4>
-							<p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">Information Technology & Business Systems</p>
-							<p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px;">Specialized in Web Designing, Python, and ICT Resources.</p>
-							<small style="opacity:0.6;">Professional Certification</small>
-						</div>
-						 <div class="timeline-item">
-							<h4 style="margin:0;">Intermediate (12th)</h4>
-							<p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">PCM Stream</p>
-							<small style="opacity:0.6;">Completed 2025</small>
-						</div>
-									
-						<div class="timeline-item">
-							<h4 style="margin:0;">High School (10th)</h4>
-							<p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">Science & Mathematics</p>
-							<small style="opacity:0.6;">Completed 2023</small>
-						</div>
+                    <div class="timeline-item">
+                        <h4 style="margin:0;">NIELIT 'O' Level</h4>
+                        <p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">Information Technology & Business Systems</p>
+                        <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px;">Specialized in Web Designing, Python, and ICT Resources.</p>
+                        <small style="opacity:0.6;">Professional Certification</small>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 style="margin:0;">Intermediate (12th)</h4>
+                        <p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">PCM Stream</p>
+                        <small style="opacity:0.6;">Completed 2025</small>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 style="margin:0;">High School (10th)</h4>
+                        <p style="color:var(--tomato); margin:4px 0; font-size:0.9rem;">Science & Mathematics</p>
+                        <small style="opacity:0.6;">Completed 2023</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+	
+	
     <section id="projects">
         <h2 class="highlight" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">Featured Work</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%;">
@@ -382,75 +283,52 @@ canvas {
         </div>
     </section>
 
-   
     <div class="social-bar">
-        <a href="https://instagram.com/krishjaiswal200" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@KrishJaiswal-d1u" target="_blank" class="social-icon" title="Youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://snapchat.com/add/jais_krish6" target="_blank" class="social-icon" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
-        <a href="https://wa.me/916387616963" target="_blank" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:krishjaiswal786025@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/krishjaiswal200" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@KrishJaiswal-d1u" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://snapchat.com/add/jais_krish6" target="_blank" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+        <a href="https://wa.me/916387616963" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:krishjaiswal786025@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
     </div>
-	<footer style="padding: 60px 8%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(5,5,5,0.9);">
-    <div class="footer-content">
+
+    <footer style="padding: 60px 8%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(5,5,5,0.9);">
         <div class="footer-kj-logo">KJ</div>
-        
         <p style="font-size: 1rem; letter-spacing: 3px; margin-top: 20px; font-family: 'Electrolize';">
             <span style="opacity: 0.6;">DESIGNED & ENGINEERED BY</span> 
             <span class="highlight" style="animation: textColorShift 8s infinite alternate;">KRISH JAISWAL</span>
         </p>
-        
         <div style="margin-top: 20px; opacity: 0.4; font-size: 0.8rem;">
             © 2026 | ALL SYSTEMS OPERATIONAL | NIELIT 'O' Level
-
-    </div>
-</footer>
-
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
-
+        AOS.init({ duration: 1000 });
         const cursor = document.getElementById('cursor');
         const blur = document.getElementById('cursor-blur');
-        const heroCard = document.getElementById('heroCard');
-
-        // Combined Parallax Logic
-        let mouseX = 0, mouseY = 0;
         document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-            blur.style.left = mouseX + 'px';
-            blur.style.top = mouseY + 'px';
-
-            // Hero Card Tilt
-            const xRotation = (window.innerHeight / 2 - mouseY) / 30;
-            const yRotation = (mouseX - window.innerWidth / 2) / 30;
-            heroCard.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            blur.style.left = e.clientX + 'px'; blur.style.top = e.clientY + 'px';
         });
 
-        // Typewriter Effect
         const words = ["3D Web Apps.", "Kinetic Motion.", "Future UI.", "Visual Magic."];
-        let i = 0, j = 0, isDeleting = false;
+        let i=0, j=0, isDel=false;
         function type() {
-            const current = words[i];
-            document.getElementById("typewriter").textContent = isDeleting ? current.substring(0, j--) : current.substring(0, j++);
-            if (!isDeleting && j > current.length) { isDeleting = true; setTimeout(type, 1500); }
-            else if (isDeleting && j < 0) { isDeleting = false; i = (i + 1) % words.length; setTimeout(type, 500); }
-            else setTimeout(type, isDeleting ? 40 : 80);
+            const curr = words[i];
+            document.getElementById("typewriter").textContent = isDel ? curr.substring(0, j--) : curr.substring(0, j++);
+            if(!isDel && j > curr.length) { isDel=true; setTimeout(type, 1500); }
+            else if(isDel && j < 0) { isDel=false; i=(i+1)%words.length; setTimeout(type, 500); }
+            else setTimeout(type, isDel ? 40 : 80);
         }
         type();
 
-         // --- THREE.JS ADVANCED BACKGROUND ---
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true, alpha: true });
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        // 7000 Star Galaxy
         const starCount = 7000;
         const starGeom = new THREE.BufferGeometry();
         const starPos = new Float32Array(starCount * 3);
@@ -459,69 +337,26 @@ canvas {
         const stars = new THREE.Points(starGeom, new THREE.PointsMaterial({ color: 0xFF6347, size: 0.02, transparent: true, opacity: 0.6 }));
         scene.add(stars);
 
-       // 2. DYNAMIC GEOMETRIC HELIX (Alternative to Mesh)
-    const helixGroup = new THREE.Group();
-    const helixCount = 100;
-    for(let i = 0; i < helixCount; i++) {
-        const ratio = i / helixCount;
-        const angle = ratio * Math.PI * 8; // Spiral turns
-        
-        // Creating small wireframe cubes as "data points" in a spiral
-        const boxGeo = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-        const boxMat = new THREE.MeshBasicMaterial({ color: 0xFF6347, wireframe: true });
-        const box = new THREE.Mesh(boxGeo, boxMat);
-        
-        box.position.x = Math.cos(angle) * 3;
-        box.position.z = Math.sin(angle) * 3;
-        box.position.y = (ratio - 0.5) * 10;
-        
-        helixGroup.add(box);
-    }
-    scene.add(helixGroup);
+        const helixGroup = new THREE.Group();
+        for(let k=0; k<100; k++) {
+            const ratio = k/100; const angle = ratio * Math.PI * 8;
+            const box = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.2), new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true}));
+            box.position.set(Math.cos(angle)*3, (ratio-0.5)*10, Math.sin(angle)*3);
+            helixGroup.add(box);
+        }
+        scene.add(helixGroup);
+        camera.position.z = 8;
 
-    // Lighting
-    const light = new THREE.PointLight(0xffffff, 1);
-    light.position.set(5, 5, 5);
-    scene.add(light, new THREE.AmbientLight(0xffffff, 0.4));
-
-    camera.position.z = 8;
-
-    // Mouse Movement Tracking
-    let mX = 0, mY = 0;
-    document.addEventListener('mousemove', (e) => {
-        mX = (e.clientX - window.innerWidth / 2) / 200;
-        mY = (e.clientY - window.innerHeight / 2) / 200;
-    });
-
-    // Animation Loop
-    function animate() {
-        requestAnimationFrame(animate);
-        
-        // Stars slow drift
-        stars.rotation.y += 0.0005;
-        
-        // Helix Animation
-        helixGroup.rotation.y += 0.01;
-        helixGroup.rotation.z += 0.002;
-        helixGroup.position.y = Math.sin(Date.now() * 0.001) * 0.5;
-
-        // Interactive Mouse Parallax
-        camera.position.x += (mX - camera.position.x) * 0.05;
-        camera.position.y += (-mY - camera.position.y) * 0.05;
-        camera.lookAt(scene.position);
-
-        renderer.render(scene, camera);
-    }
+        function animate() {
+            requestAnimationFrame(animate);
+            stars.rotation.y += 0.0005;
+            helixGroup.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
         animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        document.addEventListener('contextmenu', e => e.preventDefault());
 		
-		
-    // 1. Right-click disable
+		 // 1. Right-click disable
     document.addEventListener('contextmenu', e => e.preventDefault());
 
     // 2. Keyboard shortcuts (F12, Ctrl+U, etc.) disable
@@ -529,11 +364,10 @@ canvas {
         if (e.keyCode == 123 || 
            (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
            (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-            return false;
+            return false
+;
         }
     };
-
     </script>
 </body>
-
 </html>
